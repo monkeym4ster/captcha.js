@@ -23,7 +23,7 @@ brew install imagemagick ghostscript
 ![2](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/9Y5P.png)
 ![3](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/W8yu.png)
 ![4](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/nIvW.png)
-![5](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/RVEN.png)
+![5](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/REVN.png)
 ![6](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/uX3A.png)
 ![7](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/7u5s.png)
 
