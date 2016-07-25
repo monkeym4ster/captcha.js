@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<form action="/validate" method="post">
+    <img src="/captcha" alt="captcha" onclick="this.src='/captcha?r=' + (new Date().getTime())">
+    <br>
+    <p>
+        <input type="text" name="code">
+    </p>
+    <p>
+        <input type="submit" value="submit">
+    </p>
+</form>
+</body>
+
+</html>
