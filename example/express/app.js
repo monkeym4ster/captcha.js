@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require('path');
 const http = require('http');
-const captcha = require('../lib');
+const Captcha = require('../../lib');
 
 const app = express();
 
@@ -25,11 +25,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/captcha', (req, res) => {
-  captcha(10)
-    .create((err, opt) => {
-      req.session.code = opt.code.toLowerCase();
-      res.sendFile(opt.file_path);
-    });
+  const captcha = new Captcha();
+  captcha.create((err, result) => {
+    req.session.code = result.code.toLowerCase();
+    res.sendFile(result.filePath);
+  });
 });
 
 app.post('/validate', (req, res) => {
@@ -37,6 +37,7 @@ app.post('/validate', (req, res) => {
   if (code.toLowerCase() != req.session.code) {
     return res.send(`Failed | ${code} | ${req.session.code}`);
   }
+  delete req.session.code;
   res.send('Success');
 });
 

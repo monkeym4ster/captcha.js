@@ -4,7 +4,7 @@ This is a Captcha for Node.js Applications.
 ## Requirements
 
 - ImageMagick 6.9+
-- Ghostscript 9+
+- Ghostscript 8+
 
 #### Ubuntu
 
@@ -33,11 +33,12 @@ brew install imagemagick ghostscript
 ### Quick Example
 
 ```js
-const captcha = require('captcha.js');
-const length = 4;
-captcha(length).create((err, result) => {
+const Captcha = require('captcha.js');
+const captcha = new Captcha({length: 5});
+
+captcha.create((err, result) => {
   if(err) throw err;
-  console.log(result);
+  console.log(JSON.stringify(result, null, 2));
 });
 ```
 
@@ -46,20 +47,10 @@ captcha(length).create((err, result) => {
 
 ## API
 
-### Captcha.create(length, opt)
-
-### Captcha.randomColor(colorful)
-
-### Captcha.randomChars()
-
-### Captcha.randomLineTop()
-
-### Captcha.randomLineTop()
-
-## Options
+### Captcha.create(opt)
 
 ```js
-{
+opt = {
   length: 4,
   font_size: 45,
   implode: 0.4,
@@ -70,3 +61,9 @@ captcha(length).create((err, result) => {
 }
 
 ```
+### Captcha.randomColor(colorful)
+
+### Captcha.randomChars()
+
+### Captcha.randomLineTop()
+
