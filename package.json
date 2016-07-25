@@ -1,6 +1,6 @@
 {
   "name": "captcha.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Captcha in Node.js",
   "main": "lib/",
   "scripts": {
