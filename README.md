@@ -19,6 +19,15 @@ brew install imagemagick ghostscript
 ```
 
 ## Example
+
+[中文介绍和使用说明](https://cnodejs.org/topic/57964f34f0d4b46026ba54c6)
+
+Just write an example of Express, others have time to come up.
+
+
+* [Express](https://github.com/monkeym4ster/captcha.js/tree/master/example/express)
+
+
 ![1](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/4g63.png)
 ![2](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/9Y5P.png)
 ![3](https://raw.githubusercontent.com/monkeym4ster/captcha.js/master/example/assets/W8yu.png)
@@ -43,27 +52,17 @@ captcha.create((err, result) => {
 ```
 
 
-### [Example](https://github.com/monkeym4ster/captcha.js/tree/master/example)
-
-## API
-
-### Captcha.create(opt)
+### Optional parameter
 
 ```js
-opt = {
-  length: 4,
-  font_size: 45,
-  implode: 0.4,
-  colorful: true,
-  line: true,
-  cache_limit: 5,
-  cache_dir: `/tmp/${pkg.name}`
-}
-
+new Captcha({
+  Length: 4, // number of characters generated
+  Font_size: 45, // font size
+  Implode: 0.4, // text distortion
+  Colorful: true, // whether to colorful
+  Line: true, // whether to add dry winding
+  Cache_limit: 50, // number of caches
+  Cache_dir: '/tmp/' // cache folder
+});
 ```
-### Captcha.randomColor(colorful)
-
-### Captcha.randomChars()
-
-### Captcha.randomLineTop()
 
