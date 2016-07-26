@@ -32,12 +32,17 @@ app.get('/captcha', (req, res) => {
   });
 });
 
-app.post('/validate', (req, res) => {
+const validate = (req, res, next) => {
   const code = req.body.code + '';
-  if (code.toLowerCase() != req.session.code) {
-    return res.send(`Failed | ${code} | ${req.session.code}`);
-  }
+  const sessionCode = req.session.code;
   delete req.session.code;
+  if (code.toLowerCase() != sessionCode) {
+    return res.send(`Failed,  Not ${code} but ${sessionCode}`);
+  }
+  next();
+};
+
+app.post('/validate', validate, (req, res) => {
   res.send('Success');
 });
 
